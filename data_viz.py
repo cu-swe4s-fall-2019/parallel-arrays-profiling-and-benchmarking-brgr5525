@@ -8,9 +8,10 @@ import sys
 import os.path
 from os import path
 #import math_lib
-import matplotlib.pyplot as plt
+
 import matplotlib
 matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 
 def boxplot(L, out_file_name, title, x_label, y_label, tick_labels):
