@@ -10,5 +10,6 @@ before_install:
     - conda activate test
     - conda install -y pycodestyle
     - conda install --yes python=3.6
-      
+
 script:
+    - python test_plot_gtex.py
