@@ -6,9 +6,9 @@ Files:
 - https://storage.googleapis.com/gtex_analysis_v8/annotations/GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt
 
 Make sure that you have matplotlib installed:
-'''
+```
 $ conda install --yes matplot lib
-'''
+```
 
 ## updates
 - created the plot_gtex.py script that creates a boxplot of gene read counts
@@ -20,19 +20,19 @@ $ conda install --yes matplot lib
 
 ## calls to program
 The main script should be run with the arguments as follows:
-'''
+```
 $ python plot_gtex.py \
 --gene_reads GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz \
 --sample_attributes GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt \
 --gene ACTA2 \
 --group_type SMTS \
 --output_file ACTA2.png
-'''
+```
 
 For explanations on parameters run:
-'''
+```
 $ python plot_gtex.py -h
-'''
+```
 
 ## profiling
 Using cProfile we are able to see how long a program took to run and how much
@@ -47,34 +47,34 @@ to run for a marked amount of time.
 and plot_gtex.binary_search.txt)
 
 Linear Search:
-'''
+```
 707617 function calls (700695 primitive calls) in 13.677 seconds
 
 Ordered by: internal time
 
 ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 45904   12.919    0.000   12.923    0.000 plot_gtex.ls.py:8(linear_search)
-'''
+```
 
 ## benchmarking
 Benchmarking can then be used to show the difference in runtimes between
 different methods.
 
-Using python's '''time''' function, we can mark how long each a script spends
+Using python's ```time``` function, we can mark how long each a script spends
 on certain parts of our program.
 
 Linear Search:
-'''
+```
 Time searching = 12.927680015563965
 Total time = 13.151285171508789
-'''
+```
 
 Binary Search:
-'''
+```
 Time sorting = 0.0016019344329833984
 Time searching = 0.0730128288269043
 Total time = 0.2862279415130615
-'''
+```
 
 This shows us how much of an improvement binary search makes in our script.
 Binary search is performing roughly much better with the program 177 times
