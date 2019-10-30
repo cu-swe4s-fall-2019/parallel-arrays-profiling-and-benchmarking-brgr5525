@@ -11,6 +11,7 @@ before_install:
     - conda install -y pycodestyle
     - conda install -y matplotlib
     - conda install --yes python=3.6
+    - git submodule update --init
 
 script:
     - pycodestyle plot_gtex.py
