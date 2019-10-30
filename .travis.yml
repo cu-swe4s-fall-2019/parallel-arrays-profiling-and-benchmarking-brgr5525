@@ -13,6 +13,7 @@ before_install:
     - conda install --yes python=3.6
 
 script:
+    - git submodule update --init
     - pycodestyle plot_gtex.py
     - pycodestyle test_plot_gtex.py
     - python test_plot_gtex.py
