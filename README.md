@@ -17,11 +17,27 @@ $ conda install --yes matplot lib
 - updated data_viz to plot multiple boxplots as well as take user input to
   assign title and labels
 - added unit and functional testing for plot_gtex script
+------
+- added a hashing function to replace the parallel arrays
+- created submodule to add hash table functionality
+
 
 ## calls to program
 The main script should be run with the arguments as follows:
+
+for binary search
 ```
 $ python plot_gtex.py \
+--gene_reads GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz \
+--sample_attributes GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt \
+--gene ACTA2 \
+--group_type SMTS \
+--output_file ACTA2.png
+```
+
+for hash tables
+```
+$ python plot_gtex_hash.py \
 --gene_reads GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_reads.acmg_59.gct.gz \
 --sample_attributes GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt \
 --gene ACTA2 \
@@ -81,3 +97,21 @@ Binary search is performing roughly much better with the program 177 times
 less time searching. And even though we must spend time sorting our list that
 is to be run through a binary search, together the operations take only a fraction
 of the time needed to use linear search.
+
+## hashing vs parallel arrays
+Used cProfile again to compare the time it takes to run the different methods.
+
+Hash Tables:
+```
+ 2568045 function calls (2561085 primitive calls) in 2.383 seconds
+```
+
+Parallel Arrays:
+```
+698244 function calls (691291 primitive calls) in 0.731 seconds
+```
+
+This shows us that the parallel array approach is more than twice as
+fast as using the hash tables. However, looking at the data from the previous
+benchmarking shows that using the hash tables is still markedly faster than
+using a linear search method with the parallel arrays. 
