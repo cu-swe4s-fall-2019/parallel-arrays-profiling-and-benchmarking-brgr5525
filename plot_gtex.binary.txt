@@ -1,5 +1,4 @@
-True
---output_file already exists, please choose a different name
+
          698244 function calls (691291 primitive calls) in 0.731 seconds
 
    Ordered by: internal time
@@ -2530,5 +2529,3 @@ True
         1    0.000    0.000    0.000    0.000 polar.py:111(InvertedPolarTransform)
         1    0.000    0.000    0.000    0.000 polar.py:163(ThetaFormatter)
         1    0.000    0.000    0.000    0.000 polar.py:186(_AxisWrapper)
-
-

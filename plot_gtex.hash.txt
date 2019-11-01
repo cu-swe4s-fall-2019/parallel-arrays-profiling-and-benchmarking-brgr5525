@@ -1,5 +1,4 @@
-True
---output_file already exists, please choose a different name
+
          2568045 function calls (2561085 primitive calls) in 2.383 seconds
 
    Ordered by: internal time
@@ -2537,5 +2536,3 @@ True
         1    0.000    0.000    0.000    0.000 polar.py:186(_AxisWrapper)
         1    0.000    0.000    0.000    0.000 backend_agg.py:615(_BackendAgg)
         1    0.000    0.000    0.000    0.000 hash_tables.py:6(LinearProbe)
-
-
