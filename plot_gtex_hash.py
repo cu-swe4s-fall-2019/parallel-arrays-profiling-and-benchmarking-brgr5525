@@ -7,7 +7,6 @@ import hash_tables as ht
 import hash_functions as hf
 
 
-
 def linear_search(key, L):
     hit = -1
     for i in range(len(L)):
@@ -41,7 +40,7 @@ def main():
     # sample_info_file_name='GTEx_Analysis_v8_Annotations_SampleAttributesDS.txt'
     sample_info_file_name = args.sample_attributes
 
-    #samples_to_count_map = get_samples_to_count_map
+    # samples_to_count_map = get_samples_to_count_map
 
     # group_col_name = 'SMTS'
     group_col_name = args.group_type
@@ -89,7 +88,7 @@ def main():
 
         hit = tissue_to_samples_map.search(key)
 
-        if hit == None:
+        if hit is None:
             tissue_to_samples_map.add(key, [])
             hit = tissue_to_samples_map.search(key)
         hit.append(value)
@@ -103,7 +102,6 @@ def main():
     group_counts = [[] for i in range(len(groups))]
 
     gene_hits = 0
-
 
     samples_to_count_map = ht.ChainedHash(1000000, hf.h_rolling)
     try:
@@ -139,7 +137,7 @@ def main():
     except OSError:
         print('--gene_reads must be a gzipped file')
         sys.exit(1)
-    #except Exception:
+    except Exception:
         print('There was a problem with --gene_reads')
         sys.exit(1)
     if gene_hits == 0:
